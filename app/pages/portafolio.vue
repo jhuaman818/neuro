@@ -180,28 +180,32 @@ const workflow = [
 
 <style scoped>
 main {
-    background: #ffffff;
+    background:
+        radial-gradient(circle at 15% 25%, rgba(0, 200, 200, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(0, 123, 255, 0.2), transparent 38%),
+        radial-gradient(circle at 50% 80%, rgba(0, 166, 166, 0.15), transparent 45%),
+        linear-gradient(135deg, #f0fafb 0%, #ffffff 50%, #e8f3f7 100%);
+    position: relative;
 }
 
 .portfolio-hero {
     position: relative;
     overflow: hidden;
     padding: 82px 24px 72px;
-    background:
-        radial-gradient(circle at 12% 14%, rgba(0, 166, 166, 0.18), transparent 30%),
-        radial-gradient(circle at 88% 6%, rgba(0, 123, 255, 0.16), transparent 28%),
-        linear-gradient(135deg, #f5fbfc 0%, #ffffff 48%, #eef5f8 100%);
+    background: inherit;
+    z-index: 1;
 }
 
-.portfolio-hero::before {
+main::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(18, 32, 43, 0.045) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(18, 32, 43, 0.045) 1px, transparent 1px);
-    background-size: 54px 54px;
-    mask-image: linear-gradient(180deg, #000 0%, transparent 82%);
+        linear-gradient(90deg, rgba(0, 123, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 123, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .hero-inner,
@@ -210,6 +214,8 @@ main {
 .projects-section {
     max-width: 1180px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-inner {
@@ -337,6 +343,16 @@ h1 {
 
 .projects-section {
     padding: 82px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.projects-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: none;
+    z-index: -1;
 }
 
 .section-heading {
@@ -464,8 +480,25 @@ h1 {
 
 .workflow-section {
     padding: 76px 24px;
-    background: linear-gradient(135deg, #0b1720, #12202b);
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0, 200, 200, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(0, 123, 255, 0.2), transparent 38%),
+        radial-gradient(circle at 50% 80%, rgba(0, 166, 166, 0.15), transparent 45%),
+        linear-gradient(135deg, #0b1720 0%, #12202b 50%, #091a28 100%);
     color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.workflow-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 200, 200, 0.05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 200, 200, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
 }
 
 .workflow-inner {
@@ -473,6 +506,8 @@ h1 {
     grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
     gap: 44px;
     align-items: start;
+    position: relative;
+    z-index: 1;
 }
 
 .workflow-section .eyebrow {
@@ -512,15 +547,34 @@ h1 {
 
 .cta-section {
     padding: 78px 24px;
-    background: #f5f8fb;
+    background:
+        radial-gradient(circle at 15% 25%, rgba(0, 200, 200, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(0, 123, 255, 0.2), transparent 38%),
+        radial-gradient(circle at 50% 80%, rgba(0, 166, 166, 0.15), transparent 45%),
+        linear-gradient(135deg, #f0fafb 0%, #ffffff 50%, #e8f3f7 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 123, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 123, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
 }
 
 .cta-inner {
     padding: 42px;
-    border: 1px solid rgba(18, 32, 43, 0.08);
+    border: 1px solid rgba(0, 123, 255, 0.15);
     border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0 18px 44px rgba(18, 32, 43, 0.07);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 250, 251, 0.92));
+    box-shadow: 0 18px 44px rgba(0, 123, 255, 0.12);
+    position: relative;
+    z-index: 1;
 }
 
 .cta-inner p {

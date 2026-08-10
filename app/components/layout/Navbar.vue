@@ -2,8 +2,8 @@
     <header class="site-header">
         <nav class="navbar" aria-label="Navegacion principal">
             <NuxtLink to="/" class="brand" aria-label="Neurolink inicio">
-                <span class="brand-mark">N</span>
-                <span class="brand-text">Neurolink</span>
+                <img :src="logo" alt="Neurolink logo" class="brand-mark" />
+                <!-- <span class="brand-text">Neurolink</span> -->
             </NuxtLink>
 
             <div class="navbar-menu">
@@ -22,24 +22,29 @@
     </header>
 </template>
 
+<script setup lang="ts">
+import logo from '~/assets/images/logo .png'
+</script>
+
 <style lang="css" scoped>
 .site-header {
     position: sticky;
     top: 0;
     z-index: 20;
-    border-bottom: 1px solid rgba(18, 32, 43, 0.08);
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0, 200, 200, 0.15);
+    background: linear-gradient(135deg, rgba(8, 25, 40, 0.92), rgba(10, 40, 60, 0.92));
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 24px rgba(0, 123, 255, 0.08);
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1180px;
-    min-height: 74px;
+    max-width: 1280px;
+    min-height: 90px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 10px 24px;
     gap: 28px;
 }
 
@@ -47,22 +52,17 @@
     display: inline-flex;
     align-items: center;
     gap: 11px;
-    color: #12202b;
+    color: #ffffff;
     text-decoration: none;
 }
 
 .brand-mark {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 8px;
-    background:
-        linear-gradient(135deg, rgba(0, 123, 255, 0.95), rgba(0, 166, 166, 0.95)),
-        #007bff;
-    color: #ffffff;
-    font-weight: 900;
-    box-shadow: 0 14px 28px rgba(0, 123, 255, 0.22);
+    display: block;
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .brand-text {
@@ -80,9 +80,9 @@
 
 .navbar-menu a {
     position: relative;
-    padding: 10px 12px;
+    padding: 10px 14px;
     border-radius: 8px;
-    color: #435461;
+    color: rgba(255, 255, 255, 0.75);
     font-size: 0.94rem;
     font-weight: 700;
     text-decoration: none;
@@ -91,31 +91,31 @@
 
 .navbar-menu a:hover,
 .navbar-menu a.router-link-active {
-    background: rgba(0, 123, 255, 0.08);
-    color: #0068d9;
+    background: rgba(0, 200, 200, 0.15);
+    color: #00d4ff;
 }
 
 .quote-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 0 18px;
+    min-height: 48px;
+    padding: 0 22px;
     border-radius: 8px;
-    background: #12202b;
+    background: linear-gradient(135deg, #007bff, #0a5fc4);
     color: #ffffff;
     font-size: 0.92rem;
-    font-weight: 800;
+    font-weight: 900;
     text-decoration: none;
-    box-shadow: 0 14px 30px rgba(18, 32, 43, 0.18);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 16px 40px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
     white-space: nowrap;
 }
 
 .quote-button:hover {
     transform: translateY(-2px);
-    background: #007bff;
-    box-shadow: 0 18px 36px rgba(0, 123, 255, 0.25);
+    background: linear-gradient(135deg, #0090ff, #1575ff);
+    box-shadow: 0 24px 48px rgba(0, 123, 255, 0.4);
 }
 
 @media (max-width: 960px) {

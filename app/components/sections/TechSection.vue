@@ -31,6 +31,7 @@ const techItems = [
   { title: 'Laravel', subtitle: 'Backend PHP moderno', icon: 'simple-icons:laravel' },
   { title: 'PHP', subtitle: 'APIs y CMS', icon: 'logos:php' },
   { title: 'Node.js', subtitle: 'APIs y automatización', icon: 'logos:nodejs-icon' },
+  { title: 'C#', subtitle: 'Backend .NET', icon: 'logos:csharp' },
   { title: 'Kotlin', subtitle: 'Apps móviles', icon: 'logos:kotlin' },
   { title: 'Docker', subtitle: 'Contenedores', icon: 'logos:docker' },
   { title: 'Laragon', subtitle: 'Entorno local', icon: 'logos:laragon' },
@@ -47,81 +48,110 @@ const techItems = [
 
 <style scoped>
 .tech-section {
-    padding: 78px 24px;
-    background: #f5f8fb;
+    position: relative;
+    padding: 90px 24px;
+    background:
+        radial-gradient(circle at 15% 30%, rgba(0, 200, 200, 0.25), transparent 35%),
+        radial-gradient(circle at 85% 70%, rgba(0, 123, 255, 0.2), transparent 40%),
+        linear-gradient(135deg, #f0fafb 0%, #ffffff 50%, #e8f3f7 100%);
+    border-top: 1px solid rgba(0, 200, 200, 0.08);
+    border-bottom: 1px solid rgba(0, 123, 255, 0.08);
+}
+
+.tech-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 200, 200, 0.04) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 200, 200, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    mask-image: linear-gradient(180deg, #000 0%, transparent 90%);
 }
 
 .tech-content {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    gap: 44px;
+    gap: 54px;
     align-items: start;
-    max-width: 1180px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
 .eyebrow {
     display: inline-flex;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     padding: 8px 14px;
     border-radius: 999px;
-    background: rgba(0, 123, 255, 0.1);
-    color: #0068d9;
+    background: linear-gradient(135deg, rgba(0, 200, 200, 0.15), rgba(0, 123, 255, 0.15));
+    color: #00a6a6;
     font-size: 0.76rem;
-    font-weight: 850;
+    font-weight: 900;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    border: 1px solid rgba(0, 200, 200, 0.2);
 }
 
 .tech-title {
     margin: 0;
-    color: #12202b;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.08;
+    color: #08172b;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.1;
+    font-weight: 900;
+    background: linear-gradient(135deg, #08172b 0%, #0068d9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .tech-description {
     max-width: 560px;
     margin: 18px 0 0;
-    color: #5f6f7b;
-    line-height: 1.72;
+    color: #3d4f5c;
+    line-height: 1.78;
+    font-weight: 500;
 }
 
 .tech-stack {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
 }
 
 .tech-card {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 14px;
-    min-height: 100px;
-    padding: 22px 22px;
-    border: 1px solid rgba(18, 32, 43, 0.08);
-    border-radius: 22px;
-    background: linear-gradient(180deg, #ffffff 0%, #f7fafe 100%);
-    color: #12202b;
-    box-shadow: 0 26px 58px rgba(18, 32, 43, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    gap: 16px;
+    min-height: 110px;
+    padding: 24px;
+    border: 1.5px solid rgba(0, 200, 200, 0.2);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 250, 251, 0.9));
+    color: #08172b;
+    box-shadow: 0 20px 48px rgba(0, 123, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
 }
 
 .tech-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 32px 64px rgba(18, 32, 43, 0.14);
+    transform: translateY(-6px);
+    border-color: rgba(0, 123, 255, 0.3);
+    box-shadow: 0 32px 64px rgba(0, 123, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .tech-card-icon {
-    width: 58px;
-    height: 58px;
+    width: 64px;
+    height: 64px;
     display: grid;
     place-items: center;
-    border-radius: 18px;
-    background: linear-gradient(180deg, rgba(0, 123, 255, 0.16), rgba(0, 123, 255, 0.04));
-    color: #0068d9;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 8px 16px rgba(0, 123, 255, 0.08);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.15), rgba(0, 200, 200, 0.15));
+    color: #007bff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 8px 20px rgba(0, 123, 255, 0.12);
+    flex-shrink: 0;
 }
 
 .tech-card-meta {
@@ -130,15 +160,17 @@ const techItems = [
 }
 
 .tech-card-title {
-    font-size: 1rem;
-    font-weight: 850;
+    font-size: 1.05rem;
+    font-weight: 900;
     line-height: 1.2;
+    color: #08172b;
 }
 
 .tech-card-meta small {
-    color: #5f6f7b;
-    font-size: 0.85rem;
+    color: #3d4f5c;
+    font-size: 0.84rem;
     line-height: 1.5;
+    font-weight: 500;
 }
 
 @media (max-width: 980px) {
