@@ -1,76 +1,85 @@
 <template>
-    <main class="about-page">
-        <section class="about-hero">
-            <span class="eyebrow">Nosotros</span>
-            <h1>Neurolink es mi proyecto como desarrollador independiente</h1>
-            <p>
-                Estoy iniciando este camino solo, construyendo soluciones web prácticas y modernas para pequeñas empresas,
-                emprendedores y marcas que necesitan presencia digital real.
-            </p>
-        </section>
+    <!-- <main class="about-page"> -->
+        <section class="about-page"> 
 
-        <section class="about-grid">
-            <article class="about-card">
-                <h2>Trabajo directo contigo</h2>
+
+            <section class="about-hero">
+                <span class="eyebrow">Nosotros</span>
+                <h1>Neurolink es mi proyecto como desarrollador independiente</h1>
                 <p>
-                    Cada proyecto lo atiendo personalmente. Esto significa comunicación rápida, entregas claras y una
-                    solución hecha a tu medida.
+                    Estoy iniciando este camino solo, construyendo soluciones web prácticas y modernas para pequeñas
+                    empresas,
+                    emprendedores y marcas que necesitan presencia digital real.
                 </p>
-            </article>
+            </section>
 
-            <article class="about-card">
-                <h2>Herramientas reales</h2>
+            <section class="about-grid">
+                <article class="about-card">
+                    <h2>Trabajo directo contigo</h2>
+                    <p>
+                        Cada proyecto lo atiendo personalmente. Esto significa comunicación rápida, entregas claras y
+                        una
+                        solución hecha a tu medida.
+                    </p>
+                </article>
+
+                <article class="about-card">
+                    <h2>Herramientas reales</h2>
+                    <p>
+                        Desarrollo con Vue.js, Laravel, PHP, Node.js, bases de datos y despliegue en servidores para que
+                        tu
+                        sitio funcione bien desde el primer día.
+                    </p>
+                </article>
+
+                <article class="about-card">
+                    <h2>Proyectos simples, resultados profesionales</h2>
+                    <p>
+                        Me enfoco en lo que realmente importa: diseño limpio, experiencia de usuario y una solución que
+                        sea fácil
+                        de mantener y escalar.
+                    </p>
+                </article>
+            </section>
+
+            <section class="about-extra">
+                <div class="about-extra-card">
+                    <h3>¿Por qué elegir Neurolink?</h3>
+                    <p>
+                        Porque recibes atención personalizada de un desarrollador que entiende tu negocio y está
+                        dispuesto a
+                        crecer contigo, proyecto por proyecto.
+                    </p>
+                </div>
+
+                <div class="about-extra-card">
+                    <h3>¿Qué puedo hacer por ti?</h3>
+                    <ul>
+                        <li>Páginas web corporativas y landing pages</li>
+                        <li>Integraciones con APIs y WhatsApp</li>
+                        <li>Servicios backend con Laravel y PHP</li>
+                        <li>Despliegue y mantenimiento en VPS</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="about-cta">
                 <p>
-                    Desarrollo con Vue.js, Laravel, PHP, Node.js, bases de datos y despliegue en servidores para que tu
-                    sitio funcione bien desde el primer día.
+                    Si estás empezando un proyecto o necesitas mejorar tu presencia digital, hablemos. Estoy listo para
+                    ayudarte a transformar tu idea en una web profesional.
                 </p>
-            </article>
+                <NuxtLink to="/contacto" class="button">Contactar ahora</NuxtLink>
+            </section>
 
-            <article class="about-card">
-                <h2>Proyectos simples, resultados profesionales</h2>
-                <p>
-                    Me enfoco en lo que realmente importa: diseño limpio, experiencia de usuario y una solución que sea fácil
-                    de mantener y escalar.
-                </p>
-            </article>
         </section>
-
-        <section class="about-extra">
-            <div class="about-extra-card">
-                <h3>¿Por qué elegir Neurolink?</h3>
-                <p>
-                    Porque recibes atención personalizada de un desarrollador que entiende tu negocio y está dispuesto a
-                    crecer contigo, proyecto por proyecto.
-                </p>
-            </div>
-
-            <div class="about-extra-card">
-                <h3>¿Qué puedo hacer por ti?</h3>
-                <ul>
-                    <li>Páginas web corporativas y landing pages</li>
-                    <li>Integraciones con APIs y WhatsApp</li>
-                    <li>Servicios backend con Laravel y PHP</li>
-                    <li>Despliegue y mantenimiento en VPS</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="about-cta">
-            <p>
-                Si estás empezando un proyecto o necesitas mejorar tu presencia digital, hablemos. Estoy listo para
-                ayudarte a transformar tu idea en una web profesional.
-            </p>
-            <NuxtLink to="/contacto" class="button">Contactar ahora</NuxtLink>
-        </section>
-    </main>
+    <!-- </main> -->
 </template>
 
 <style scoped>
 .about-page {
     position: relative;
     overflow: hidden;
-    max-width: 1280px;
-    margin: 0 auto;
+    width: 100%;
     padding: 100px 24px 60px;
     display: grid;
     gap: 48px;
@@ -114,6 +123,7 @@
     position: relative;
     z-index: 1;
     max-width: 730px;
+    margin: 0 auto;
 }
 
 .eyebrow {
@@ -157,6 +167,8 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .about-card {
@@ -194,6 +206,8 @@
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .about-extra-card {
@@ -246,6 +260,8 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(240, 250, 251, 0.92));
     border: 1.5px solid rgba(0, 123, 255, 0.25);
     box-shadow: 0 24px 56px rgba(0, 123, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .about-cta p {
@@ -279,6 +295,7 @@
 }
 
 @media (max-width: 980px) {
+
     .about-grid,
     .about-extra,
     .about-cta {

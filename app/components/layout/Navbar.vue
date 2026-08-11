@@ -42,7 +42,7 @@ import logo from '~/assets/images/logo .png'
     align-items: center;
     justify-content: space-between;
     max-width: 1280px;
-    min-height: 90px;
+    min-height: 110px;
     margin: 0 auto;
     padding: 10px 24px;
     gap: 28px;
@@ -58,7 +58,7 @@ import logo from '~/assets/images/logo .png'
 
 .brand-mark {
     display: block;
-    width: 160px;
+    width: 220px;
     height: auto;
     object-fit: contain;
     border-radius: 0;
